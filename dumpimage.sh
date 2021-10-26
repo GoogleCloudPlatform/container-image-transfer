@@ -101,7 +101,7 @@ EOF
   crane manifest "$SRCIMG$HASH" > "$DIGEST".json
   case $(jq -r .mediaType "$DIGEST".json) in
     application/vnd.docker.distribution.manifest.list.v2+json)
-      fetch_multi "$SRCIMG $DSTIMG $TAG $DIGEST"
+      fetch_multi "$SRCIMG" "$DSTIMG" "$TAG" "$DIGEST"
       ;;
     application/vnd.docker.distribution.manifest.v2+json)
       crane pull "$SRCIMG" "$DIGEST".tar
