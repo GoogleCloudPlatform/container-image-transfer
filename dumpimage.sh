@@ -49,8 +49,8 @@ fetch_multi() {
   for DGST in $(jq -r .manifests[].digest "$DIGEST".json)
   do
     crane manifest "$SRCIMG@$DGST" > "${DGST#sha256:}".json
-    crane pull "$SRCIMG@$DGST ${DGST#sha256:}.tar"
-    fetch_plain "$DSTIMG $TAG ${DGST#sha256:}"
+    crane pull "$SRCIMG@$DGST" "${DGST#sha256:}.tar"
+    fetch_plain "$DSTIMG" "$TAG" "${DGST#sha256:}"
   done
   cat <<EOF >> "$OUTPUT".sh
 #!/bin/bash
