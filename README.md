@@ -2,15 +2,13 @@ This is not an officially supported Google product.
 
 See LICENSE for license information.
 
-* Background
+# Background
 
 This repo holds a script for dumping and transfering container images between registries while keeping digest unchanged. 
 
-* Usage
+# Usage
 
 To use the script, run 
-
-```bash
 
 ```bash
 dumpimage image dest-dir
