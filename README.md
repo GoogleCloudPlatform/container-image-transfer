@@ -8,10 +8,11 @@ This repo holds a script for dumping and transfering container images between re
 
 # Usage
 
-To use the script, run 
+To use the script, first download and install `crane` from https://github.com/google/go-containerregistry/releases, 
+then run 
 
 ```bash
-dumpimage image dest-dir
+dumpimage.sh image dest-dir
 ```
 
 You can laterly run the `auto.sh` in dest-dir to upload the image to another registry.
